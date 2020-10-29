@@ -11,6 +11,7 @@ public class BookFiction extends Book {
         this.genres = genres;
     }
 
+
     // copy constructor
     public BookFiction(BookFiction anotherBook) {
         super(anotherBook);

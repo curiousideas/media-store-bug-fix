@@ -19,7 +19,6 @@ public class Problem3Test {
         e.setTitle("jjj");
         e.setAuthor("jdhw");
         assertTrue(d.equals(e));
-
     }
 
     @Test
