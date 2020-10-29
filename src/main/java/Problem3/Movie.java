@@ -13,11 +13,28 @@ public abstract class Movie implements StoreMediaOperations {
         this.id = UUID.randomUUID();
     }
 
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
     public Movie(Movie anotherMovie) {
         this.rating = anotherMovie.rating;
         this.title = anotherMovie.title;
         this.id = anotherMovie.id;
     }
+
+    public String toString() {
+        return rating + " " + id + " " + title;
+    }
+
 
     @Override
     public boolean equals(Object obj) {
@@ -37,11 +54,11 @@ public abstract class Movie implements StoreMediaOperations {
         // The bug is caught when
         //  1. newly add tests fail while all old tests still pass
         //  2. remove the bug and use the fix below, all tests pass
-        return id.equals(theOtherMovie.id) &&
-                rating.equals(theOtherMovie.rating) &&
-                title.equals(theOtherMovie.title);
+        //return id.equals(theOtherMovie.id) &&
+        //        rating.equals(theOtherMovie.rating) &&
+        //        title.equals(theOtherMovie.title);
 
         // fix is here
-        //return this.id == ((Movie) obj).id;
+        return this.id == ((Movie) obj).id;
     }
 }
