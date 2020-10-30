@@ -8,32 +8,76 @@ import static org.junit.Assert.*;
 public class Problem3Test {
     @Test
     public void catchTheBugInBook() {
+        // Book Fiction Tests
         Book b = new BookFiction("t1", "au1", "g1");
         Book c = new BookFiction((BookFiction)b);
-        c.setTitle("jjj");
         c.setAuthor("jdhw");
         assertTrue(b.equals(c));
 
+        Book f = new BookFiction("t1", "au1", "g1");
+        Book g = new BookFiction((BookFiction)f);
+        g.setTitle("jjj");
+        assertTrue(f.equals(g));
+
+        Book h = new BookFiction("t1", "au1", "g1");
+        Book i = new BookFiction((BookFiction)h);
+        i.setTitle("jjj");
+        i.setAuthor("jdhw");
+        assertTrue(h.equals(i));
+
+        // Book Romance Tests
         Book d = new BookRomance("t1", "au1");
         Book e = new BookRomance((BookRomance)d);
         e.setTitle("jjj");
-        e.setAuthor("jdhw");
         assertTrue(d.equals(e));
+
+        Book dd = new BookRomance("t1", "au1");
+        Book ee = new BookRomance((BookRomance)dd);
+        ee.setAuthor("jdhw");
+        assertTrue(dd.equals(ee));
+
+        Book ddd = new BookRomance("t1", "au1");
+        Book eee = new BookRomance((BookRomance)ddd);
+        eee.setTitle("jjj");
+        eee.setAuthor("jdhw");
+        assertTrue(ddd.equals(eee));
     }
 
     @Test
     public void catchTheBugInMovie() {
+        // Movie Action Tests
         Movie m = new MovieAction("PG13", "ti1");
         Movie v = new MovieAction((MovieAction) m);
         v.setTitle("jjj");
         v.setRating("R");
         assertTrue(m.equals(v));
 
+        Movie mm = new MovieAction("PG13", "ti1");
+        Movie vv = new MovieAction((MovieAction) mm);
+        vv.setTitle("jjj");
+        assertTrue(mm.equals(vv));
+
+        Movie mmm = new MovieAction("PG13", "ti1");
+        Movie vvv = new MovieAction((MovieAction) mmm);
+        vvv.setRating("R");
+        assertTrue(mmm.equals(vvv));
+
+        // Movie Action Tests
         Movie mo = new MovieComedy("G", "ti2");
         Movie moo = new MovieComedy((MovieComedy)mo);
         moo.setTitle("jjj");
         moo.setRating("R");
         assertTrue(mo.equals(moo));
+
+        Movie mi = new MovieComedy("G", "ti2");
+        Movie moi = new MovieComedy((MovieComedy)mi);
+        moi.setTitle("jjj");
+        assertTrue(mi.equals(moi));
+
+        Movie ma = new MovieComedy("G", "ti2");
+        Movie maa = new MovieComedy((MovieComedy)ma);
+        maa.setRating("R");
+        assertTrue(ma.equals(maa));
     }
 
     // DO NOT REMOVE OR CHANGE ANYTHING BELOW THIS!
